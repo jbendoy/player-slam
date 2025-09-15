@@ -10,7 +10,7 @@ How to Play:
 - Player 1 uses W, A, S, D keys to move.
 - Player 2 uses Arrow keys (Multiplayer) or AI (Single Player).
 - Stay inside the arena and don’t lose all your lives.
-- Push your opponent out of the arena to win!  `
+- Push your opponent out of the arena to win!  `;
 
 const StartGame = () => {
   const navigate = useNavigate();
@@ -72,10 +72,10 @@ const StartGame = () => {
       style={{
         width: arenaWidth,
         height: arenaHeight,
-        transform: `scale(${scale})`,
-        transformOrigin: "top left",
-        margin: "0 auto",
-        position: "relative",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: `translate(-50%, -50%) scale(${scale})`,
         backgroundImage: "url(/assets/start_bg.png)",
         backgroundSize: "cover",
         display: "flex",
@@ -90,7 +90,14 @@ const StartGame = () => {
     >
       <h1 style={{ fontSize: 40, marginBottom: 20 }}></h1>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 15, alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 15,
+          alignItems: "center",
+        }}
+      >
         {/* Play button */}
         <button
           onClick={() => handleStart("single")}
@@ -117,9 +124,9 @@ const StartGame = () => {
         <div
           style={{
             position: "absolute",
-            top: "10%",
+            top: "50%",
             left: "50%",
-            transform: "translateX(-50%)",
+            transform: "translate(-50%, -50%)",
             width: "90%",
             maxHeight: "80%",
             overflowY: "auto",
