@@ -310,38 +310,56 @@ const Game = () => {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: 15 }}>
-          <button
-            onClick={() => startGame("single")}
-            style={{
-              padding: "15px 30px",
-              fontSize: 20,
-              backgroundColor: "#FFEB3B",
-              color: "#000",
-              border: "2px solid orange",
-              borderRadius: 10,
-              fontWeight: "bold",
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-          >
-            Single Player
-          </button>
-          <button
-            onClick={() => startGame("multi")}
-            style={{
-              padding: "15px 30px",
-              fontSize: 20,
-              backgroundColor: "#FFEB3B",
-              color: "#000",
-              border: "2px solid orange",
-              borderRadius: 10,
-              fontWeight: "bold",
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-          >
-            Multiplayer
-          </button>
+<button
+  onClick={() => startGame("single")}
+  style={{
+    padding: "15px 30px",
+    fontSize: 20,
+    backgroundColor: "#FFEB3B",
+    color: "#000",
+    border: "2px solid orange",
+    borderRadius: 10,
+    fontWeight: "bold",
+    cursor: "pointer",
+    transition: "all 0.2s",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = "#FFD600";
+    e.currentTarget.style.transform = "scale(1.05)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = "#FFEB3B";
+    e.currentTarget.style.transform = "scale(1)";
+  }}
+>
+  Single Player
+</button>
+
+<button
+  onClick={() => startGame("multi")}
+  style={{
+    padding: "15px 30px",
+    fontSize: 20,
+    backgroundColor: "#FFEB3B",
+    color: "#000",
+    border: "2px solid orange",
+    borderRadius: 10,
+    fontWeight: "bold",
+    cursor: "pointer",
+    transition: "all 0.2s",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = "#FFD600";
+    e.currentTarget.style.transform = "scale(1.05)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = "#FFEB3B";
+    e.currentTarget.style.transform = "scale(1)";
+  }}
+>
+  Multiplayer
+</button>
+
         </div>
       </div>
     );
@@ -397,6 +415,35 @@ const Game = () => {
       >
         Player 1: {"❤️".repeat(player1.lives)}
       </div>
+      {/* Exit Button */}
+<button
+  onClick={() => window.location.href = "/"}
+  style={{
+    position: "absolute",
+    top: 40,
+    left: 10,
+    padding: "6px 16px",
+    fontSize: 14,
+    cursor: "pointer",
+    backgroundColor: "#FF5722",
+    color: "#fff",
+    border: "2px solid #E64A19",
+    borderRadius: 8,
+    fontWeight: "bold",
+    transition: "all 0.2s",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = "#E64A19";
+    e.currentTarget.style.transform = "scale(1.1)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = "#FF5722";
+    e.currentTarget.style.transform = "scale(1)";
+  }}
+>
+  EXIT
+</button>
+
       <div
         style={{
           position: "absolute",
